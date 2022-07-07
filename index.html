@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Github User Data Finder</title>
+    <link
+      rel="shortcut icon"
+      href="https://github.githubassets.com/favicons/favicon.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="search">
+      <div class="search__input">
+        <input
+        type="text"
+        placeholder="Enter Name"
+        id="searchBar"
+        class="search__input__bar"
+      />
+      <button class="search__input__button">Sarch</button>
+      </div>
+      <div class="search__result">
+        <fieldset class="search__result__now">
+          <legend>Now</legend>
+        </div>
+        <fieldset class="search__result__last">
+          <legend>Last search</legend>
+        </fieldset>
+      </div>
+    </div>
+    <div class="userdata"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
