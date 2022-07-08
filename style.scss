@@ -15,9 +15,10 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 :root {
-  --dark: #222;
-  --dark-2: #333;
-  --light: #fafafa;
+  --dark: #0d1117;
+  --dark-2: #30363d;
+  --light: #c9d1d9;
+  --blue: #58a6ff;
 }
 $dark-scss: var(--dark);
 html,
@@ -27,17 +28,20 @@ body {
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
+  background-color: var(--dark);
+}
+.container {
+  display: flex;
+  height: 100%;
+  width: 1200px;
+  max-height: 900px;
 }
 .search,
 .userdata {
   height: 100%;
   display: flex;
   flex-direction: column;
-
-  &.userdata {
-    flex: 1;
-  }
+  background-color: var(--dark);
 }
 .search {
   width: 340px;
@@ -50,7 +54,7 @@ body {
     content: "";
     height: calc(100% - 40px);
     width: 1px;
-    background-color: #ddd;
+    background-color: var(--dark-2);
     position: absolute;
     right: 0;
   }
@@ -64,31 +68,32 @@ body {
       font-weight: normal;
       font-size: 18px;
       border-radius: inherit;
-      border: 1px solid #ddd;
-      background-color: var(--light);
-      color: var(--dark-2);
+      background-color: var(--dark);
+      border: 1px solid var(--dark-2);
+      color: var(--light);
       flex: 1;
 
       &::placeholder {
         font-size: 18px;
         font-weight: normal;
-        color: #ddd;
+        color: var(--dark-2);
       }
     }
     &__button {
       padding: 0 18px;
       border-radius: inherit;
       border: 1px solid #ddd;
-      background-color: var(--light);
-      color: var(--dark-2);
+      background-color: var(--dark);
       transition: 0.15s;
       cursor: pointer;
-      font-size: 14px;
-      color: #888;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--light);
+      border: 1px solid var(--dark-2);
 
       &:hover,
       &:active {
-        background-color: #eee;
+        background-color: var(--dark-2);
       }
     }
   }
@@ -103,19 +108,132 @@ body {
     &__last {
       width: 100%;
       flex: 1;
-      border: 1px solid #ddd;
+      border: 1px solid var(--dark-2);
       padding: 6px;
 
       & > legend {
         margin-left: 10px;
         padding: 0 3px;
-        color: #aaa;
+        color: var(--light);
         font-size: 14px;
         font-weight: 500;
+        user-select: none;
       }
+    }
+    &__now {
+      max-height: 220px;
     }
     &__last {
       flex: 2.5;
     }
+  }
+}
+.userdata {
+  flex: 1;
+  padding: 20px;
+  gap: 10px;
+  &:empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: "Result";
+      font-size: 70px;
+      color: var(--light);
+      opacity: 0.1;
+    }
+  }
+  &__profile {
+    padding: 14px;
+    border: 1px solid var(--dark-2);
+    border-radius: 3px;
+    display: flex;
+    gap: 14px;
+
+    &__avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: inherit;
+
+      img {
+        object-fit: cover;
+        border-radius: inherit;
+      }
+    }
+    &__about {
+      color: var(--light);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &__name-view {
+        font-weight: 500;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+
+        h2 {
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+
+          small {
+            font-weight: normal;
+            margin-left: 8px;
+            font-size: 18px;
+            margin-top: 2px;
+            opacity: 0.3;
+          }
+        }
+        a {
+          color: var(--blue);
+          font-weight: normal;
+          padding: 0 10px;
+          font-size: 14px;
+          display: grid;
+          place-items: center;
+          border: 1px solid var(--blue);
+          border-radius: 3px;
+          transition: 0.15s;
+          &:hover {
+            background-color: var(--dark-2);
+          }
+        }
+      }
+      &__desc {
+        padding: 5px 0;
+        color: var(--light);
+        opacity: 0.7;
+        font-size: 14px;
+        border-top: 1px solid var(--dark-2);
+        flex: 1;
+      }
+      &__others {
+        border: 1px solid var(--dark-2);
+        display: flex;
+        align-items: center;
+        padding: 6px;
+        border-radius: 3px;
+        justify-content: space-around;
+
+        span {
+          span {
+            display: inline-flex;
+            background-color: var(--dark-2);
+            border-radius: 3px;
+            padding: 0 6px;
+            align-items: center;
+            margin-left: 2px;
+          }
+        }
+      }
+    }
+  }
+  &__repos {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--dark-2);
   }
 }

@@ -13,26 +13,62 @@
     />
   </head>
   <body>
-    <div class="search">
-      <div class="search__input">
-        <input
-        type="text"
-        placeholder="Enter Name"
-        id="searchBar"
-        class="search__input__bar"
-      />
-      <button class="search__input__button">Sarch</button>
-      </div>
-      <div class="search__result">
-        <fieldset class="search__result__now">
-          <legend>Now</legend>
+    <div class="container">
+      <div class="search">
+        <div class="search__input">
+          <input
+            type="text"
+            placeholder="Enter Name"
+            id="searchBar"
+            class="search__input__bar"
+          />
+          <button class="search__input__button">Sarch</button>
         </div>
-        <fieldset class="search__result__last">
-          <legend>Last search</legend>
-        </fieldset>
+        <div class="search__result">
+          <fieldset class="search__result__now">
+            <legend>Now</legend>
+          </fieldset>
+          <fieldset class="search__result__last">
+            <legend>Last search</legend>
+          </fieldset>
+        </div>
+      </div>
+      <div class="userdata">
+        <div class="userdata__profile">
+          <div class="userdata__profile__avatar">
+            <img
+              src="https://avatars.githubusercontent.com/u/20463385?v=4"
+              alt="avatar"
+              class="userdata__profile__avatar"
+            />
+          </div>
+          <div class="userdata__profile__about">
+            <div class="userdata__profile__about__name-view">
+              <h2>Fatih Şen <small>(fatihydrm)</small></h2>
+              <a href="#">Visit Profile</a>
+            </div>
+            <div class="userdata__profile__about__desc">
+              Front-End developer
+            </div>
+            <div class="userdata__profile__about__others">
+              <span class="userdata__profile__about__others__followers">
+                Followers: <span>11</span>
+              </span>
+              <span class="userdata__profile__about__others__following">
+                Following: <span>41</span>
+              </span>
+              <span class="userdata__profile__about__others__repo">
+                Repositories: <span>23</span>
+              </span>
+              <span class="userdata__profile__about__others__stars">
+                Stars: <span>126</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="userdata__repos"></div>
       </div>
     </div>
-    <div class="userdata"></div>
     <script src="app.js"></script>
   </body>
 </html>
