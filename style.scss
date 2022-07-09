@@ -108,7 +108,6 @@ body {
     &__now,
     &__last {
       width: 100%;
-      flex: 1;
       border: 1px solid var(--dark-2);
       padding: 6px;
       gap: 10px;
@@ -131,7 +130,6 @@ body {
 
         &__left {
           display: flex;
-          align-items: center;
           img {
             width: 40px;
             height: 40px;
@@ -163,12 +161,12 @@ body {
       }
     }
     &__now {
-      flex: 1;
+      height: 142px;
       padding: 5px 10px 10px 10px;
       border-radius: 3px;
     }
     &__last {
-      flex: 1.5;
+      flex: 1;
       border-radius: 3px;
     }
   }
@@ -195,6 +193,10 @@ body {
     border-radius: 3px;
     display: flex;
     gap: 14px;
+
+    &:empty {
+      height: 190px;
+    }
 
     &__avatar {
       width: 160px;
@@ -285,6 +287,7 @@ body {
     align-content: flex-start;
     border-radius: 3px;
     gap: 10px;
+    overflow: auto;
     &__repo {
       display: inline-flex;
       color: var(--light);
@@ -333,6 +336,20 @@ body {
           }
         }
       }
+    }
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--dark-2);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 3px solid transparent;
+      background-clip: content-box;
+      background-color: var(--light);
+      border-radius: 5px;
     }
   }
 }
